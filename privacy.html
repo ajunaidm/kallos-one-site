@@ -1,0 +1,354 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Kallos One Privacy, Terms &amp; Support</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,500;6..72,600&family=Figtree:wght@400;500;600&display=swap">
+<style>
+/* Layout: one calm reading column; a lens-mark header, a pill nav, then Privacy and Support as two documents. */
+:root {
+  --bg: #F6F4FA;
+  --surface: #FFFFFF;
+  --fg: #1C1730;
+  --muted: #5D5672;
+  --line: #E3DDEC;
+  --accent: #6A2163;
+  --accent-soft: #F3E6F1;
+  --glow: #F08A62;
+  --ok: #1F6B3A;
+  --ok-soft: #E3F2E8;
+  --display: "Newsreader", "Iowan Old Style", Georgia, serif;
+  --body: "Figtree", -apple-system, "Segoe UI", system-ui, sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0F0D17; --surface: #191626; --fg: #EDE9F5; --muted: #A79FBB; --line: #2B2640;
+    --accent: #E7A3DA; --accent-soft: #2A1C2E; --glow: #F5A27E; --ok: #86D9A0; --ok-soft: #16281D;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0F0D17; --surface: #191626; --fg: #EDE9F5; --muted: #A79FBB; --line: #2B2640;
+  --accent: #E7A3DA; --accent-soft: #2A1C2E; --glow: #F5A27E; --ok: #86D9A0; --ok-soft: #16281D;
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+body {
+  background: var(--bg);
+  color: var(--fg);
+  font: 400 16px/1.6 var(--body);
+  padding-inline: 20px;
+  padding-block: 0 64px;
+}
+.wrap { max-width: 720px; margin: 0 auto; display: grid; gap: 40px; }
+
+header { padding-top: 48px; display: grid; gap: 20px; }
+.brand { display: flex; align-items: center; gap: 14px; }
+.brand img { width: 52px; height: 52px; flex: none; border-radius: 12px; }
+.brand-name { font: 600 1.05rem/1.2 var(--body); letter-spacing: 0.01em; }
+.brand-sub { color: var(--muted); font-size: 0.9rem; }
+h1 { font: 600 clamp(2rem, 6vw, 2.9rem)/1.1 var(--display); margin: 0; text-wrap: balance; letter-spacing: -0.01em; }
+.lede { margin: 0; color: var(--muted); font-size: 1.08rem; max-width: 60ch; }
+
+nav { display: flex; flex-wrap: wrap; gap: 8px; }
+nav a {
+  color: var(--fg); text-decoration: none; font-weight: 500; font-size: 0.95rem;
+  padding: 8px 16px; border: 1px solid var(--line); border-radius: 999px; background: var(--surface);
+}
+nav a:hover, nav a:focus-visible { border-color: var(--accent); color: var(--accent); }
+a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+.label {
+  display: grid; grid-template-columns: auto 1fr; gap: 4px 14px; align-items: center;
+  background: var(--surface); border: 1px solid var(--line); border-radius: 16px; padding: 18px 20px;
+}
+.label .tick {
+  grid-row: span 2; width: 40px; height: 40px; border-radius: 50%;
+  display: grid; place-items: center; background: var(--ok-soft); color: var(--ok);
+}
+.label .eyebrow { font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); font-weight: 600; }
+.label strong { font-size: 1.1rem; }
+
+section { display: grid; gap: 18px; scroll-margin-top: 24px; }
+h2 { font: 600 1.75rem/1.2 var(--display); margin: 0; }
+h3 { font: 600 1.02rem/1.35 var(--body); margin: 0 0 6px; }
+.meta { color: var(--muted); font-size: 0.9rem; margin: -8px 0 0; }
+.doc { display: grid; gap: 22px; }
+.doc p { margin: 0 0 8px; max-width: 65ch; }
+.doc p:last-child { margin-bottom: 0; }
+.doc ul { margin: 0; padding-left: 1.1rem; display: grid; gap: 6px; max-width: 65ch; }
+.doc li::marker { color: var(--accent); }
+.doc b { font-weight: 600; }
+
+.contact {
+  background: var(--surface); border: 1px solid var(--line); border-radius: 16px; padding: 20px;
+  display: grid; gap: 12px;
+}
+.email-row { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; }
+.email {
+  font: 600 1.15rem/1.3 var(--body); color: var(--accent); user-select: all; word-break: break-all;
+  text-decoration: none;
+}
+button.copy {
+  font: 500 0.85rem/1 var(--body); color: var(--fg); background: var(--accent-soft);
+  border: 1px solid var(--line); border-radius: 999px; padding: 8px 14px; cursor: pointer;
+}
+.small { color: var(--muted); font-size: 0.9rem; margin: 0; }
+
+details { border-top: 1px solid var(--line); padding: 14px 0; }
+details:last-of-type { border-bottom: 1px solid var(--line); }
+summary { cursor: pointer; font-weight: 600; list-style: none; display: flex; justify-content: space-between; gap: 12px; }
+summary::-webkit-details-marker { display: none; }
+summary::after { content: "+"; color: var(--accent); font-weight: 500; font-size: 1.2rem; line-height: 1; }
+details[open] summary::after { content: "–"; }
+details p { margin: 10px 0 0; color: var(--fg); max-width: 65ch; }
+
+hr { border: 0; border-top: 1px solid var(--line); margin: 0; }
+footer { color: var(--muted); font-size: 0.85rem; }
+
+@media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
+body { margin: 0; }
+</style>
+
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="brand">
+      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJAAAACQCAYAAADnRuK4AABBEUlEQVR42u29abAlx3Ue+J3Mqrr3vrX3bvSCpbE1AYLYSJCESEkAaZoSRY7HpiQ7rLAdtsPW2DMRCsc4YiyFJzR/xuHwhGlb4RmNwpbDS4ijjbQlakha5IgkRBIAN5AAARAgGuhGL+hGr++9u9WSZ35kLZlZmXXrdYOSaLIRF+8udatuVX51znd2uuGOD4FAABH0PwJVz4nKt6l8v3xOBCo/t9+Hva9qu2afHPxOvb1+z95fuQ/jmPXb1uf1m8Yx3G1QH8v6534e+McL3mV2t2I0b7H5Tv0em9ua32euv2Hvm1vHYmbzeFR+aBzL2BebR7WPyeXnzRbO9s5vErAumbEABqCal57PyV4AawEBBohB5VkTtXZdL7pnf2S8IOeY5ANGCzwlmKmGV/m6OWciDe768/JmsR7UPMh6mOhrbgwi54Z0zpHQ3AT1TWP8buuGImcNzBO1lo7MzxikrzuB2HPRGyEB5xjemw3WjWceVqC1MM3WpiRi8y4ltCSMcSYMgPVXqAUscoAJ6wJR+0ca77WOST5wkQN2aqSiBzhtoJhvkbFq5JxnI1nJ+h7Zv4nQkrKt62YuEMgGScdr87y9i918UK+JKXiDz62f5luT5n3hl9nkeYfCn+sjcoUzV5oQOd8hR3V5JF4n6LrAY97dPsnlAsdd+EoaEZmCx8CSAyoy5Yxx3uRINOuub0sXOBKNXIlFpuzynJ+7L3huTK0KGJVUMvbDxnViC+wGCj0QEM4qt17a79sqrPzx3BzTVmEtsAV4h/s18kgu606m9kW2VEEnuGABh4ylr4FF5FdlMMFl/kZybgoTFC4VcPmm/6ZpTsP9zfVdCpC5qPa+mAi+e95Qp1yxndb1pxDnawPOUmFkgIW9qsxWcVydi/NLqQW4Nney7kYviMnDg6i9X4949YPLx4kcjuPyCZ8IMtfT4k4+A8O4fhbP8APDWWAvNbUEA+Ac376EtoqjFnUq+RZ3SS0yrqVJHcjiQK4Sdf7vUVtap8IPLL/6dkmn82N6Ayukmx3JFPzcWSRTotaEGia8LOyQy4fIkDSWdDYlWQgYbSvUPW/ygAyaHfvUhV8VOdebjatY7ocBMLuShxwp5JBpABCtRV1sbbHfWvMRvsDzoOUGD7DaPIg8xLoTPNbn9sLCAI2tK8nDd2xLDF6QkA3ylvXV5jttku0HR0iiMFqUrCWV2cIthQgzu0B1CTw7Ro/o5ChtKs0+Uk0+3k3klz4uJwhIGltdeTiCF1hwzGOE+YYPOJVEcMxzr1REo8KC1hc6gOH6nAJW0OLPDGLt2Zg85rlf2sHyTnVaaIaUEl6jyi+F2HzfEnEBos0eU91+Sc2d4eEOLUVKngvhvbI9wAM/ASZLyjTE2jbXKQAS85XHhPf8Dq8bw1lkcsmrR2pZ75OrogK6gOyrbPigOAAKS9oZHMiWEB6fDzf6tfs2IZ/zsUV9PGLey/Y9fiAs8hu1JV0fTmQTXT/PAZFltbmk3JJ+5Pd1dTnuWqBBN5kOeV7Yx7rN911Lzu9pZ2oR//bNIFrSoi1c2efsooCq8vE2vzeJPM4rCpv3CO3f4xvqo9ZMFUg+ZyJZoHHNf9/7RGHgEnXZJH4wkFdc+Im114Pc4WAkLyey98kVJ6olX3s/IqAB/IR5ATmmMFQC6g5o/0BPPKrLCkMPtUYhtUYeTtOYrg21MfmSLZl6meiLHKAeK6t2pXhuNqYOVUToRYBNgcFB0Lqbkr2GqEg0tf3e3rhhp5mO5geSzcS4y9ryWAYhFUlYYCH61Br5nXKuivGFI2yxQbVqIrKB5AWwx2VAAVEQlgweNRDiREFz2/ENUZuHUkCduVrRt3QCCIEiHGQ1733uNtj9GAx6txH2XgdMf/J5cTvCIn5O1OY/ppORTNVlWmYBByAtJCwdwSeEiHTz84JACUobv3/HH5UKmOwe0m3Ewlp7ZO+d5PsRvUMe4YtK8Pui2ta7z/T3XUCfA7OdCeCmpTRBVpsO6X0LIygLL9ENOTfD0fWwRPSdR0sSu6qoi2GTz4FLXiAGVCK3hAb5zXi2fSxts53IT7i5N0u0AcdtCCGAYs+PDVh66PJo+/iKrf78IYwOE52on54PXBp2pcBCaeOGNSjIh0JE2uORDjDusIEnvN5fj+hDQNeyzzfVYbYHr2HIp9RlsrrSrdOjjg615oAH1Pqv20QPYDZkDnWpEwqTTnZDFvBbuq7VFjDTF97joZuAjRtKOPGqJh4SMvu61Ekooox2WgfDo1YQ5tHbARaRP8+GfCkm5EomXy4S2lFz9FBFXfwwpOZcadT3WjqHbDsQPb8VHo7TpUQ8WR2ihWaXILtmtuNQ5A7J7f2eZ1sOBFa5h8TyAZnRZT50WHdAIJGt7Rj1W40BC8y9Zp1WB7WtL+p+7nO6UQBMnfvrRT3Q5kAUcmAufL44h5gWqtXwPsifJhuQUB3e2pAPKiTuyCTUFPDu+VUnB84mJG0WXTgKxM66nYWeeCOFeVQ7ua8jZubgTdi6FUHp4n0/iFw/sWZfDKwD/T7JGNpHe5tuRdsdrWxnD3aBKER0vds450shJxDg55uukzEcijCIuMud2rqICehzeVw1LXpZL2EZ3e9vl3gMfocC1qhHTHdkETD1sNi8VhHjWv4xOiOWHg9dD2NhG0tD1C9M4ncCUa/jseVIdA2rgPUZjKksMN0psFC0SImRX6PbRTDNE1pkXVDYtvS+V5aysHUAXrgm1N/E6eWBpd7HCZ9d5z48FRj9wKcFm/D7XjxkNETEFkgbDuhqP4ELqauQ2gy4E7CYD4WOyCFwcfh3dt9DvCBm5Tsn6pCggfhVMF61gESjaw38PqyWH4jhd1kjbKiHHX8UJtG86PqHgIBwXVLQevQsOgegwuyDUVlwp5M9bWgF9sveRaGei+W7WSnoR6UF+6NFmrTTXKcFv48cR2JgkUPBvNBd4TMducdNyx0Zb+3n7AVqsw17jssdP4DL82bvXrgllbj8veygiR0txwslXsip13mDdoEwYJiEcn98/J07TXdqqU8RdAP5/BXkM0n9ZC9k8fAi4F3HRQ1a2D7Rwe21rst6mT2X0pRK3KFOeTG/6qP5qJ+06s2tWlyRgqptEb82ZbForVgPg4AXPecu9wa11FVI/wfjNq0T424VFZBSVv23751Gh8EPqRJw1H0tgtdrITfhha7g0D5CfiKm/uR+Ee8srTDq1oPU4073mPXcJcm61Bh5pJQlAdkvyaiXorB/m9XjwAFRyXuY9QPVw22QQGg1HLCOuQ1jDC0uRl7gLyLkrm/KphMcJqk9pKJ7A4jwHcDBRQxtu5C49dHjzIu3DwrKMPMxu0vYEso924UU1yHUDkfioDwLWngcUH9kvCa61msSso45eIO5mOiiFWI7vodObU79XAC0yHftJXrc4r0tFeVLo+TAQjH8IKoEjaG2TCrdItTsUY7EPUQMO+fIfkOA+1Gb+rf3dVc43Tkqo4Bhe/p93nJ/WY/jymux9gUudmtRiDvvFLZLoxfypy5VGL6vPQtloozYu617XLIuNsFv7Lu00tkzL179Pv6lhZSAFmtFCrgeWtkBHb4xt9o1ajaidvoOh3N03UNQJzkz987Oq+oOLP9Pvq1gf5fhSY6qtq8uCVvyi6g6Buui7GoncAKnRpaiFazlaq/cSCmuuBK1fEVtmeI6JLm5idihEdzT+nKolk/6koeZsfd9ByjEbfQxLN5nAMjYMdl3n7XA3CSfhysw/KEI9kU0uMNnRR5p4Ll+1HFtyYQoO5XQRCASIEEQRCAhIEjocl1hFxJSrd40oVbMUIrBrMrXCqz0+zWwsNg6DIlcVxUxh6S9X3X7gGhua2OBDY3T7W7XoOLmIjIjYnIyYtgEjo+F6zudPc4n977nWn/aSKlBSdQJgjBMmnvI+DWtLS0Qmc0ThIAUAkIISCkRRRJSSgghQNR4NrSkcZJ26xtDoVAKRaGQFwWKooBSCqr6y56WdGBr9diru7k+s4CNEb5OhF7iq+024TA9YQrTfwIil7ySl/WTV1I0kopbGXVk3f9650xwVFdzd1BLuFJQoviUG8hUcRVgy6OTBosJmDiOEEURAAFmApOAjCRGwwTLSwMsjxKMBhHiWAIM5IXCPM0xnqYYT1KMZymKLIckhThmDagiR5rlyPO8AZRSjfORw/wtZJ0qpUp1ygHOFyaN7AKKPJ9zWzJSC0QGsAl1nTIDiMx7lxyCauVzVbyjg5FT0InF/jqt0H68ssd91XAekxeZn2j1pEEjpUQcx0iSGFJGKBSBZIS9u1Zx9PBu3H7zbhw9vBMH96xi59oQS8MISSQgpRbVhVLIc4XJLMPVrRnOvr6FV167ihdeuYSXXr2Ecxe3UHCK0TAGc4E0zZBmGQpDOtnOSQQCNaWDTghsjaf48E+8A9949mW8fOo8BnFULyBjkbESsOzIDr1wC12GSoOP19kojEL3PXUyivaCuk5Bn1oxZYcrUeAFTreKgqVym30TAUIQhKikTYzhYAASEooFdqyv4v67DuPh+27Cm2/fh327lwEhy5UpgEKBVclvlKr3OYgFhoMBdu0c4pabduJhcQTIFC5fneC5ly/hyWfO4KvfPosz568iGUgMBglm8znSNENe5EBRQKlmAdv8pXmmWEFKgb/1M4/i33/s83juu6cwGiQoVNF2kXCnRvKIasOgILJBTZ54EnHrQBX8IosEU5uhk2F6WwtsZPu727sSqS1V2lAIsiHyc5/qApADfU2CBaIoQhTFGA0HkHEMpQiHDuzGe995B977zttw+OAO/R2Vo8hyKJXBaCRrX9SSeORgUFGa76UFRgTsWE7w8P2H8PADh3Dxwha++K0z+OQfH8d3XrmAwUAgSWJMZ3NkJZCUKsAKNik1FkcIwnSW4q7bD+PY0UN414PH8NHfe6ytgrpiiB7LLuRIZa/OCjlBq+0NK4wdDhO8zTuiuBYIOKzqsFBdVVZT4xowtJPFo3z+Gs1xIiRJgqXRELkS2Lm+hg89eg8++MibsGvnKsA58nlaA8AwKsDMEJUlJoxfxwxWQKEYrNhis3mhwFkBgLFrdYAPPXob3vf2I/jsk6/idz/7Al46dRHLSwKplJjO58hzANDSiJ04oRD6BK9sTPCed94DIQgP3nMUB/btxNnzl7G2MoJiVVqBvJAkG2ttgYngp0Ym0fdvU/Kx8g25uv+uXw42EDcQYhYZwum53EoYJ0+/G/czTyPxrgbk1m9Au2OZEJoEx3GMpaURhoMhmGI8+s5j+Ed/57340Ydux2hAyOYpoBjCAIwUBJlEkHEEGUsIZsznOTbGc2xspZhMU8zTAsyMOJKIhxJyEEFKAikFVTRtsBUrZPMckQSO3bYHjzx4GFJIvHR6E0ox4lhAcdMcnGuVxZjOUmxNpiAivPWeo/h7P/d+DOIIK0tDMDO+/eKruLyxheksBUhACvJ7v9lj0nflaPNia605BtupHTe85cPcKgHuCSSz4I48PQr7AKhdehxu0+vvYk+QQkBGEeI4xvLSCCRi7Fxfxd/+6YfxgUfuAqCQzTKIsh+bUgpEgBxEAAjzyQwvnbqCF1+5gOOnL+O1C1u4sjHFeJYhywsQgCiSGCYR1lYG2L97GTfdsIZjN+3E0UPrWFsfAMzI5zmKQkEIffULpRBHBDmI8M1nz+Nf/dZT+O7J1yGRY2syRZqmtcUWxxK3HNmHh95yK370obvwljtvBBEhz3MAhOEgxvmLV/Glb3wHX3jyWXzr+RM4f+lqs6ie7vKmN7zlnWf/aw51rGf2ZjPQDfd+mM072U65oAWjBnzjCOzWdG3phDAALQ8wodXx1fPbKqKcJAlWVpZQsMSxowfxD//2e3D7zQdQpNNaiCmlQADkIAZUgWe/ex5f+NoJPPX8GZx67Som03kJLvbEwut2+zoGRBLDQYwDe1Zxz2178SP3HsT9d+5BMoqQT7MSSFQT8eEoxtXNGT7yG0/hj776CiTlGE8mSNMUk+kMNx3ag1/4Gz+J9z58D5IkwnSWYTKbQZDQ6lwAO1aXQUQ4efYC/s1vfQYf/f0/LtWYH0ChcQaV9HMDvvY2HmBxO0BcA8irHoJSB56uFmY7OL9EcfsFepsTLJBQJsCEkIhLvlOB5+EHbsMv/t33YW11hGw2g5RaHBSFQjyMAGY88dSr+P3PPY+nnj+NrfEMghQAbXlVzkFVeplNL7AGbCnxSscjk/YjDQYD3HHTbvzEj9yCRx88hOEwwnya1oWvRaEQxwJCEH71Y8/gN//weQhOsVWCaDqfYz7PcOTgLvz4Q3fj/T96H958xxHkRYFICmxsTfG5J76NTz32FL729EvYmkwxHCTWwlphCe9sjnauUysq2DVjwwM8OnDvh9k3OCXYpDswaCUkndzPqHO0QVcHeltyCSEhI4lBMsDqyhIKjvCeh9+EX/z59yGWhDzLIQVBsTbDZZLgpRPn8R/+y9fx+DdPIE3nEMTI8xxZliEvCigHONZQFLJb4QkhIIhKa09zL4YAiRh3Hd2Lv/r+Y3jnvftRpAXyvIAQVKvOZBjhP37iefz67z8DqBRbk3GtziazOWazFEIQ/sM/+x/x8AN3gBn4n/63f4vf/tSXsbo8wnAQQ0oqSXh7Yd0cpzbI2uDgVnoKByWVKd3k6oG7fjmsOnxkeAGBXkR6O0h3X4CJ0mucJAlWljV4HnnnMfzjv/d+RAIoigJSEAqlEEUCQgr8zqe+hf/j1z+PF14+C6gMWTbHZDrDfD5HmmXI8rwGUaGUHd9iLp+r2rusSmmVF9rznOU5wAqRZJy/NMYXnjqDC1fmuOe23VgaRUizAlIArBh5VuDBu/cBTPjGixeRRKSlnlKQQmBleYCtyQzDYYyfeuRBPP/yGfzzf/f7WBoOMBzELQLuJb/MHRkM7WwIdOV1dcQ5o1BI0ht2cP067Ilx+RIcKeyCtP1CIT9Pc++IMiwRRRGWRkMoknjgrpvwj/7O+yAJUEUBQYRCFYiSGBubM/zL//gY/r/HX4QQBYo8xXieWuEGS1W13SHNhTaiEfWdqYCCCCIvkOc55lmGQRJDkMJ//tzzeP6VS/iHP3cfbrtxHdNxqi0nBmbjFH/jg3fi6laK3/7sd7C0NCyBy8jzAqNhgse+8hy2JjN8+Rsv4OLlLexaX0auVGew1v39FEhY6X7OgXBH+zty5cBdvxxWUT5eEzC1jRZwnV0r+nIcn1WH0kkYRxgOh0iSAW7Yvxv/+z/4IHasjVBkeakqCkSDBGfPX8X/+iufxuPffBmRKDCZTLRDL0u1tFFFGUH3BYN7xlpKca4lVimZigJ5USCJCRc3pvjit87j6A3ruOnwKtI0L8m1BvtDd+3Fi6c2cfLcFmIJHZhV2gv9+qWruPfYTfjUY0/h+MlzGAwiQ/KwP5Aaci56HJbeQRXkzwkJAU6uHLjrl8nX4dRHbHt+Rj51BwRIdw8OVPVpFoRIRkgGCZaWRojiIf7x//DnceetB5GncwghNHiSGKdfu4Jf/Min8MKJ1yBRYHM8xjzNkOfaQmKl2u7zhal8vjvdkF5cqTwNpLwoEAkgzRS++Mx53LRvFbfeuI50nkMK7ZSMIsK9t+3GF58+j/EsA7MGYJU6cvzVc3jpxGt1UDWYPOek0rrZbO3kPfarNW9uXDg2oiWQT0IsAITVJ7kngIIcp5N4NwCqAqLLSyMojvAzP/Eg/vv3PYh8PtUWkVKQUYRLVyb4xX/xSbx86jygMmyNx0gzHUYolHLChdQKv4RTTKiVZuFdUgYUuLbqqIzVPfHsRdx5ZB03HlxBOi8gJZClCjt3DLB3bYjPf/McpFBlAFa7Ac5duIoszyFK5xIvLsIK8Bt4So5sB2GIK7XhyrVU6p8TTf58kFa+W0dSeTAHjlxrwdHFpCPrUui4EokIR2/ch7/+Fx6Cyuc6LscKEIQsL/BPfu2zePHEa2CVYms80eDJ85rvVKkV7GQ8V93sIgHEAkgkMIj0I4mAWDJiAUhq5XbBrqTnWgKlWYrJdIr5bIrxZIx/+p+ewokzmxgMBArFkBKYTlL8+AMH8Ohbj6DgCMNBAiklQECSROVAE3b4JDozINGZxIaOxBDujEe62BA+QHAwWZt7ELGukwv8aPYRbrTiRDLSFxciwl/7796GlZVlqKIo41gMGUf4dx97Ek9862Xt7R1PkWapAR7VxHSo8YMQACmARDKGETCKgFGs/9avy8cw1o9BpIFGZCfbm9UdlTrKcu0UzLMZzl28in/+/zyNeVZAGoEqVSj8tfcdxa71ZcgoQRRFWqoayfxe6yr4yrMdd9Ludh6ReVuQP7wheFHqJfnFNELJb8FqUA5KJRuwbSlFBEgpkMQxCha4987DePTtd6DIZhBEUIVCNEjw1W++gt/5r99EJBW2JlNkWYoiL2rfjnX08jARMQY1QAjDEjTDEiwaNFS/Nj8fRcBQamlFsLMP65TpklRnWYbxdAbiFF9/4TV89A+PIxlGUGVcbjbPcfOhVfzkO25EwbL09Uh7gF3IUuKArHE0BBNCfaKC60gL5JZYTBk5XC1Vd8JnrzRZKHkCYtb2nOqMQimkTgaLYvz0n79Pp2gUSpv2kjCbzvFvfvdJzOczzGYz7ZgrGvC0EvBJq6NBRBiUgKiANDQANYqpeR5RI4kiYBAbKk4akW+nNEg5IIoox8c+fxzfefkyBgMBpfRNUmQFPvjwYezduQIhtYNSCGOgEgcqaSmQQtZBiK3KWfJbaAyf9rHLtoR3I+pOxuWgCgpwHuourAupPa6TwwTiOAKzwJ23HMA777sZKp/XzkIRx/jkF57Dt186A0KO2WxeEuZCc6NKFJdJ74JsfjMon1cgGkakpU5sqK9a+jSAG5r7iLQkk+RtxwDF2umYpinm8zmubI7x0c8er6k5ETBPcxzZv4x33bMfBUskcQwhRWlscIsYdzXBYos0c3d+WUcqSGtbso8qgimo8A9ZbS+2PjHu+kEMb1CPeUHqNzU5MkkSQ5HAe95xB5LhEEWuJUsUCWxtjPHxzz4D4lz7eXKdSupzuBE0eBJZAkdWwCGL/wwdzjM0JM/QVHWyBJIkDCSQRARBLQZRB1XzPMdsPoekHF965jU8/dJlDAZS5xgBYFZ49P4DGA0HiKIIUojGo8+LuI1fBbjJYGHaYl/7UDMv84loEGXQP/bb/90FAW58JaCzW8drv4ZLnqUEkcSu9RW86/5bAM6b6HoU4/NfPY6XT79e5iKn2s9ThSC4ya8jMGIJxBJIJCFxpI8JjkryLFWPuCTWBrkelMCrAGk+BNnxJZT+oUIpZHmGNEsxnk7x/z5xqjbzBQHpvMDdN6/jtkPrUBCIImkMdAnkCBIvos8dVhh7TfzuFjrNc+H1Gzh18BwgwOzjSYSWhPIjOKgha1ARtPMwjiIUDBw7uh+Hb9iJIsu0CSkIKkvxmcdfhCpyzGveUzRknBolHQkgqR7VYkeGNCpBsRQDS4kGRyT1I5GEUazBVAFnUH6/+huX+4ylPlZtFJQNDph1wllRFJinGQQKfOX513Hm/BiDSKdt5EphNJJ44PbdYNbZBlIIq06vpca4D7fkblOfA1a4u5YUMON99UneHkkUNuvRYcr7awYCHMjwEAsiyEgCEHjgTYdBUkKVEkYmEV46eQHPHX8NghTSNNO8R3GrA5kgRiSBqFzgWDZAqtTPUBKW4irpDFhNgEOrhCNrhJ1D1On9lgSqQFjuq/IhxQKQgp30ai0Vi1KVKZXj/OUxvvriJciYoLjMNlKM+27bicEghpASJIRdLuyvJW2TaOJePh+3Xi1sYrcDs5ELDAqEfOCvxmrxI+Z2o+zFhX/+xPmKQAshMBwmuPu2Azp6SZorgAS+9uxpbIynQFGgKEp/TyurjiCpWdhqkSND5VSWVKEYd+6R+JFbEhzdE2FtoOvMxrMCZ67keOLVHF8/py04YdSeKWYoBgoJFKzrpSIFFAQrd5nZ8A9lGSQyfO2Fi/jgOw7WBnueFbjlwDL27hjh9LkxpKBw6TiH/HAhad9NvdsVH93OyqYujKnkJ+QU/DkZ8uxWlFag4boExA81fyWF/bopF6nibNqFT9i1YwU33bADKPImnKZyPP3iWbAqi/lUw33skAkjEgQpbAmRSFPtaPnyl948wCN3jUCjuLy/CGCFteUca+sZju2f48FXU/zGc4yNVEsgxXo/BQMxM3KhKzalAIRi5NwOdRRKIStyxEmB757awJXNOZZHEkUBZIXC7rUYh/cu4+S5S4Yl5kCkqmHggCOR2umsrUz7RQSX0PLjmQ5J0Q1rDqC845XbLq6zGtwh0p5WNUIIKAb2717FjtURVK59P1IIbG1OceLsZRC4LJdRhtneHFsQIMoQhBT6ERnqJon0IvzsPQM8et8yMBxBRavg0Q5gaScw2gEerUAlQ6hoiDcfifHzdzOWIkAKTaIbtUU1eKLymC3VU0shBbDC+SsTnLowRSxFaa0x4kjgyN4lLT2lcMrIzSh5QI0xWgWItjp1+A11d8sN5RHVXVq9rVYIC2JZ3cAAhbyn7CXV7l4rE74CkEgiHZVmgCLC+UtjXLw6BhFDFdrn0+6vwxo4lUSoQERV+ALICuDthyQePjZEgQQ0XIFY2gFa2gUs7QKWdoKG6xDDZYhRjAIJbtwr8BduLFBAS5/6GMQ1WEX5cHNyuDbrtaNzOs/w6usTkESd4wwCDu4Z6bLssumDm7LBzAHrhFuz4u0KjUC8jNpRvWBkubQyBbDY2cQdcifY2s1l761zDX/XPBkSWpXt3rGMql6MNSvGhcu6xKVKn+C63QrqditVTnK1mNVCV8+JgOUYeN9tMVhGoGQAJMvAYBUY7dAAGq0DgxUgHgFRAplIMCK8fb/CjUu6kUIkDGAS18cT1PRxNFvCqLrLhy59Pnd56ohwhd2rSenCII9/jQPRApO48+K18DjtCOHYpBsqEdwVhPPl0VJ3WILJbTDJfnW1SDIZiewEYG1lYN6/AIDLm1PkuTbZlXMRzUsnSIcuqAxhEDEkMSIB5Aq4eZ2wf10AEBAyBmQCxENguAYs7wKSFSAa6PdlBJTJ9DIm3LNeaNIsWsOejfmqtmVZdwRTTZuYy5u6Xq12xCnG2lKMSJK3FxICwW9f6gYHyQd71Vio73Ur/saeWFirhHWhie54LZn7eB08sesOEkeEYRIZjk699WyeGSmp7DR5Yt9u7DGWpNfs0IomSsx9eiTa5unhoc51hrN/qguAuIzYm2rHaJlXPp/M81Y5dRJXRkQ7BtUFDXa5qDdU5ZH8zK2IQ5COlCZjZJvo3d16GAwqrbXuDlBtg91skmBv4VqA/gUUgpoQd7lNXhhyx1NFwc7xQjgYStaOn0IBRQ4UKZDNgNkGkI6BPAXyuX5f5Xo7paXEkJTRI6Q7K4E9QcTK2MgL1eoCGwlzbiz7pUDID+RpssCLM3+8hg9zKK2O7Q5l7nL7Fr79k83uGW6foHZruxqszHXPYnL8SO3O8bquyxWwUnom9jE78z+dAC2TLQ0ImKYAshwQBZDNgfkYIAGoDCAJFBmQTYFsAqSp3jbX3TamOUMBRqsUW7JUzkPfdTNfxxFZdz9VNwgzGKFxDB1ORK+yQnCmO1tmvwMYw1XgyrwIXa1TfE7FjpltLclSY5XCncOcRgpmizQ2OsNP52nLsFweJjrpqvC0raBGtiq2O7CWFAOqdHqeHjMwy0GUAbPS68sFkA1KPVdoCTSfAvMUSDMgzYEsw+mpDrMIBhTQHAvmMc3bx4kW1Spa1mCrPptnOsG+KQJkT/hiMXjsZopWaUmvNMG63a9HZEWtZaUF0qR2JIaklPNNs2We0zks1DtISxGu/SVgxtWtmS2BlML6ygBRJFHksMxcUy5qgl1rHONByJkxIuDlTcK5Kxn2SQFFgGDWEkZOSjAp/XqeA7M5MEtBaYpiWuDpzSEEGEXpv1GmhVXlRvuyCMluu7d7NbFJMQFXxxnyXFkSrTd4uEN1UTgVohOM1E7dES2HEbu6jxdkHG7fvPcFW00Ow0b+jm7wxLhweQyoosnPKxT27lzC0jA2FgItsqoAKMUoWHuKC1X9ZeQllRnnwKdfBWg2A09m4PEU2JqUjzGwOQG2psB4CkxmKCZzUDrDly9KnJhJSFbIlLt/oGCu6VLbLWd0FZES+3YMDMctA8S4uDFHXuY0KXZa1fWSPO1garutOgd8QZ5VY25ZasLdiZ0c1N1p3Zd+2uW5bvdUNlgDtXV1FXgEGOcubiCfZaXZyFB5gf07l7FnxwqYdcK93Y+vOYYGD6NQWlLkqnnMC0ZEjC9fEHjspIKca7CozSl4c1KCZwLemkKNp1DjOWQ6wSuXGR+/sATBjFTB2md1HMX6r2+5qi5qRAKjQYxDe4bgQjVGhGKcvTyrK2DZsTAXEWKmjm70vCAKRj4fk588iVayGC/2G6Aj0YidIjefLGKfOcntfEQNoAKCGOcubeLSxqRslqCbFSwtJ7jxhnUwdMReCDLsuGZvRbmoufPICv1Ic4YA4zdfjfGZVwCMJxCTMWhrXEsi2ppATCYQ0zGefp3wf51ZxaQAcqWQFs2+mv1rH1OhjKR4Q6JT2ZYGJLBnfYhDu4ZIc1XnGaeZwolzYxCUk9/UBZ52XXxbmpjJgoFJjaHcG2pnOkaWJb0w/aiL8xjU2GkEzl4rrR25d+2/qjwGYFy6OsbJs1ewb+8qOM30iUjCvbcfwGeeeKGuYiDLkqi8soSs0M6+rNCeYh3o1IZX9RuSCPjtMwmevirx7l0pjo5SrEa68mCcM05NBZ7YWMJXtxLNd5TCvIAGkGJkCvUjV/q9gm1SX4kfEjpZTEHg9oOr2LUaYzrPNTGVwMXNFKculAAqQx6+NE9eYKAH/UDckZzWldfufB41/eiqvs6hqHl3H2mfP8nXk95XT9+Y9mj8Qay7dhVKX8DpbI5nXjqHt953Y7PfvMADdx7A2soIm5uZdvsLAapTOppj56wXVipAKoIotPglAqgMlysAA8l4bkvg+fEIa5HCqtRhiXFBuJIL5AxEUMhK4KQFMC8Y85xLSQQtjRQjL9hyzlW/SJTSJ44iCBnhwdt3QIgmDhZHEsfPjvH61SmAoqlU9Q5X4I7ksj4DsELJaR3bGxOKBLcpQy8XuJcIO+lOodAFe5LWvCdblQjnGcAK33j+NHie6c7yBGRpjlsO78DdR/eDmRDHUdljsO0DUqbKKhhpoTAvFOa5wrxgzHLGLFeYZKXUUwobGfDqTODEVOBSSrocuigwzRjTvPxOqQJTY79Zeayc2aMWGulDIsLeHct46+07kGVF3aeRiPCN41cwnae6SlUpO6fII2/aXTh4YQ6Qt96mNcfEY90ZOBPwpixycMEZ3QWFfr3KHaI1LG5VaYXp0l6FZ18+hxNnLiOKZR1AlYnEn3voFpCMMYiTsvETOXxL/5cpY6HzRnLMjMc0Z0wy/ZhljDzX/aFnucK4fL8CzzxnzHOFWaHJ+NyQSGlh5mM315YEQUYCgySGQoS3H9uNw3uGmKdlKz0BbE0yfPXFSyAUyIyiSHYIeackWmAhh2/qds/F1ugFt0+0LxsR6B5m4vqB4Hh29J1kkyHX+2POa2i+x9ZgXWaFPNedNC5d3cJjT53AzTfvBs902kQxy/Du+27ELYd246WTZxFHcZ1c1ioKYL3A5hlVTkVtnRFiyZBEEGVEvUpMq3xKpomeFSiljVZnFYDSgutGmq5HVwqBWEaI4wSjpSE+8LYDuiKjLBJYGko8+cIVfPfMBgRyZHmma9sWaIOGy/Jij7XRRae/x9p2KlbfFcFIeEA99YutsJ2Q75A+2/zn1h1Qv1eZwqrAPE1BKPCZJ7+L2dZMR6kB5HmBtR0j/KVHjkGVaowqMu0R0Yq5XuzqMSsMCZQxJrnC1JJGCtNMadVVSqBpZkouQwrlCoXyVzhUjbGGgwEKxHjX3fvxlptXMZnndSkQAfjMU+cxmc3q8qR6XILHc2NJkT7gacmcgEVNXUP5GkLc5kC9yvQ5qFu51QW0n5j1u9QbZ2KWZQAKPP/KOfzxUychhzGUUrqZ1CzF+99xFEcP70JecNn+tpGE7ri4gk3VpTDLKsAYIKnUlfm63qbZvuJBlUrL2b4OTU6SLk9K4gRxkmDn2jL+6o8frq1MpRjDmPDyaxM89ozu5DqvigR4kcpq20udHIjaTuJWpmNXEytuPhchPuI6+rr8UIxQeUl3SQkHht66tfKqbCU3T+fIsjl+6zNPI5tldaewNMuxsjLAbYd3Is2LppKzgwFUkqiSNJWEmZQgqqTOJFeY5Bo8k0zVHGia26Cb5wqFE7Oqjy2q1jQRlkc66/Fn330j7jy8jGlaQJTnEUcCH3/8LF6/uoW8SJFVed5QDuvpYkLckfLBHSnGfo+0W4XjTWn1ZbtxKwck8LN40T3BnZaAl9qxkxzG2pSfz1MIKvC1507i019+Acn6EpgVRsMYRZrj+OlLkALNYBPvjG8bnHnRkOdKNVXgaCSQKgFlg61SY5kKn5uWPAJxFGNpNAJTgofu3Ie/8mMHMZnlui0fM0aJwHdObeGTXzsDiQyzNEVR5OXMjl72l5PiushjzYv9RtR2KrrWnhWNtwltKIen8Tr6pgS641TYSYdip2m+ncIB+DxEAEMVCrnIMZnOMBwSfuW3voy15QHedvdBvH5lgl/7+Ffx3MvndOfVusNXO0PPN9ZRA0l7jYmoTEU1Z4MZiYJNwuACWqsH2UkpS/AMEcdD7Nu9jv/5L96GWBJmqapDMySAX//MCVzaGENlc2RZpnsmev3Inmfc3a7C5jjsVWO+G6ztdLQlUSsa3127ZTsbq51QIJvIpvvkabbZTmRrz+5B3fGrKPKyPS/htQuX8A8+8gncdHAnNrZmeO3iBgQKzNK50VTBGRJB/siRDsJSvRAF++PGC4fgmNmPgiBFOXphNMRgOMLyaBm/9LPHcPO+ETYnus1dXiisLUf4xJPn8LlvvQaJpgmoMixJDhrli/MUvYvPPTzY1GGNlU7fyFc06MvpoQWTu2AtfLs2jN0xdK7UqT225J1ozNC1VMhzMGZIuIAqMjz73S0IKSDAmFajAxzHm91qr90mzrqYzqC93v+MXtJCEKSMGvAkIwyHy/ilv/wmPHTHOjbHWd1ZZDQQeOXcBL/6yeNQxQzT2QxZntat+BYb7z7i22WYtEdELQp/uLVhZkgj8ssfnyoypAWTM+HHJ70q1eTLSnSPBbgzDpvUgXL7khcVqgDn2rSvxlZyhnqCTV2dUYKxingLY/JPlWekmMO+CVooc2wRVoYomhllCZaXhhBygPW1NfzSz74J7757JzbHugG6HvIC5Dnjn37sRZy9eBVFPsPM6Wu0EDid9nDgNffkQNzd8wmuCutMDIM94jKcbegDVuecZlsSUDvVrJaRZTyoKMqmTUazc2Z3bKOAlAJROf4pKstjqj7MhSqakQZVxNzwspE3jOzDTTO0tzrWIEkwGg6RI8EdR3bjf/nwnbj7xpVa8lRxraVE4p/8znfx5PPnQDyvfT9V7X8/4PiMhAXgIQ44EdF2SrId+3JlVtQkyvvUU0AysZuD7JJtP7DAxhBeQzlRa45w+T7becJc6zxV+iLc/NpSWgkteSIZYTgcANBRbykkBBirQyDL83qSYAUkVbdh4TDNMdohVykZQgrdfjiOyx6OCWQ8xIfefhg///5bsGNJYnNigIcZKyOJX/3UCXzsSycgMMfmZKqJc1FF3nv0QmQz/NRHEvGCma2ecEYrT9reMurmPAZ8jCh6mzf5k+8XDr20Euj9wzDRwc4Q+JygrZ/hIAGJGPfcehA/8543YRhLfPbrr+KLT58G0xyDZIA8z+ourlWneB138nAKY1y4IDKAo/kOKAbJBHffvBt//T0340fv3oU0LbS5Xs7tIAArSxK/9qmT+Lf/9SUInmFzPME8S5EXuUX+u/u6sd1NHz35j4fb8MJYGgf3ETWZhx6xzXZ01j/tlBakdPjBhgC4Wu87VRY+O5GNGQuV1zeSuvjv1kN78Cu/8F7s3rMMFAXe/9CNePy5c/jYF47jK8+/ho3xFEOZA1B1lWihinoiYO0gLTMARDkyvBrkC4rAkIiTAY4d2YkPvv0g/tx9e7EylNiaZnXmYa4UBhFBCsJH/stx/MbnXgbUDFuTMebp3E/+uyg0b4f/4NrBw900PjLR0pkoVgfqOuq7jO385vkiHuS+Dyc1ozG17TELxkUtoxhSSqQ58J4Hb8buPcvYvDzREwbBeMeb9uPtd+7Ft09cxueeOoMnnz+Pk+c3sDWdAaKA1N6eVsi31I+lK0NiMIhxYNcK7r1lJ37snr146207sDyUmM5zbE4zyNIyypmxNpK4sJHin338u/jDb5yB5Bm2phPM52VLPqWChY0MP5Ptb8J7QMm+9i2efZFt1/g5EAVMdPL3BvJZWxQcqOKAyPEHsSHqvA5IhqdakqwTpla9NdeLsTmZNznIJeim0xQg4M037cCbj+7EeOt2HH9tA8+dvIKXzmzg7KUJLm3OsTXNkBdarUVSYBBLrC7F2L9jhKMHVnDXjWu4/eAK9q0nAFgDZ5LVNfK5YgwiwnIi8eXnL+Nf/N6LeOHUJQieY3M61aGZ3O4qskj2NGZ4H6nTUbm6EDxu7Myvxmj9vg9we2hKe65F5ZZvbWOzy/Z75PH+EtkjfC0nHLXb4xNsrkMI5OBSHTpIkgFGwxF27VjHR/7+e/Dgm29APk2RlolbVKaKKNYVoIOqBb1iFHmBybzAZJ4jzxUKVvU2o0RgGAsISYBSmGcFsrLljKBmQmEkCaOBxPkrc/ynz72K3/3SScxmExSFHjOVlpxHLUgWC1pclmQIp4vB6wDsSuYLvA40+KT1+z/A1hK35lqYC2kuIgUX3Jq+4wMROUEFcho0WsYVeectkMf6qg4uynTR4WCIwWCE9dVVfPjHj+Gnf+w23LB3GSrLMU9zqLL1HWrfkLbCqn5CVQcyMj4vlD0xuZK8SmlfdhIRkkTg6laGT339PH7zsZM4fvYKIkoxm8/Kqc157esJ5SYvVGEt07qH1FngjV6cP9Q+Hq3f/1Pcqpgk6pAU1F70ru2cbUMSpj12PPSddtzA7YdGRBBS1iAaDoZQiHFk/068/6Gb8f63HcGtN6yWVcsF0qyoTfjw3HijNMCojhCo1JtWo6cvTfG5p1/HJ75yFt85dRlQKZRKMZ3NmoEvhTJ6GXVJG1+GRLg7U/eAlO05FL1g8szFovX7f4qtdWFY88As1UTWkjrT5cgrMcgDiBbgrD8UkCyAByqeQTGlxDMG0yVxjNFwCCl1Gunu9WU8cPt+vPueG3Df0V04uHuEKBb6DiuU5j2q8QuZgQ1BgJS6ExkIULnC6xtzPHNyA1989gKe+M4FnLm4Ce0e11F13T02t2axAv0qQ+FL8uJ+NpdZg8ZlXZwUFMjX2oYkciWQrzGHNQO1xYH6cqWeKsyjxigoccjjOyRveKGu/BQSUTkqSk/CiVGwRBTF2L2+jNsP7cCbbtyBW29YxeE9S9i9mmBpIDGIRW1JKWZkucI0zXF5K8XZSzMcP7eF5169ihdOb+DsxTHmWQqJHKxyzLK0nsVqTUbskjbM3ghuy+/TI2xaeTaICNN5VhoAQ2xNZ1CKrRh3N5i603Bo/YGf4rabvkGUPU2wTba9UqMFGEcd+dSU24WUXBnl9zrbQqg9t6rqNU2kQxtS6BkUSRwjimIQaS81oHnT0jDB6lKClVGM5WGEqC5kZEyzHFvTDJuTDONZijTLwVxAoACgW/emWYasaMZp1pLMaRfnBY0TM2lZW0ZQk32xFXP6kBSYzjPMsxx3HNmLnSsjHD97EVuztG4KtSgivwg8hifazump/0/+nCDXoeeLtFtRBsuL7akV84RU4fF82wBurjJ7zHzTPclKN3lSrJCTQlYQ0iyr69JjqQOgOUts5gIbW1Qn3Ns3RJn0QWXdfTkTLC8BUxgDeVXdGMIAA3EbKN4+hmyW0Pudhh5JpGedCcyzHBc3J7jt4G782H234uylTTzx7AlkeQEpKeBQ5F6MyuU6EVq/0Vx8Ms7DGYhLCIQu0IpfhUIUVvJGMKwB67Zl8oUvAG8TODPGx1wHY5UCFBV1WGIuhBW1r4KjwskoY26mOFexM7bCH1w2UjB6NdKCZCJfGMLHcTokji5UJMzSHBe2xji0bx1/8yfeht3ry/jYF57GM6+cxdIgscHD2wGPOfCOrOsd1YBh6pzc0mrPwuR8xR836wpdIODTDqZ4tHKQbLdidwoYWX6UovZmK5Aiey58TfTd5oRGhx5uCC07Q2T6ZKGxVzU521C4G2YFfgZjPEsxmaY4emg3fuGn34V7j96A3/vSs/i/P/E4lGKsLg3KGn3bj9THewQPx22psAo/bQZk/A16pUuJ4DR1AkLeZW6pIQ7FudiukCRLqpi5wO33qD2jHJ6MMd2HSLFtOVJAZFv5S9v5x52jue1y4sCcbTQdPRiEeZpjc6qzMx+88xD+1k++DffdfgiffPx5/P1/9Z9x7tImdq6ONH9T3E4owyL+46eVbRL94Ae5T5omWr4W932f47HDlPdZWl7z30eOPZ3wQ6MADA7TllHU6yL1vZjbSEHrBa6qjh6kQTDPckznGZgZR/btwAfecSd+7r334dC+Hfj4Y9/Gv/zdP8bx0xexvjpCEkk9Y94HEbb5mF3Ss40sTDuhzHeh7MtuStp6GA7ZwVcsSuGoF82jptjuMlbdKkTcAl1loppqxqwipXAyj+3SZ+4YoOc3qYmuBSiBUECtOmGEWHT67iwvMM9yFAVjNIhwZO863nn3jfiL77oLj9x3FJvTOf79p7+BX/uDr+Cl0xewujLE3l0rKAplgCfQHc21wvoCh3wqjMwYSUWerZaY3ibTvsBqrao6U1nhgMX5zAiJUElqq2hwUY6PzFXl8POXEXc6IcspQJWfSFCV+qrJKAmqPyfD1+Wt6Ah4YhYDuGyBV3YfyQqFLC9QKIYQhJVRgiP71nHsyF68/dhhPHr/LXjw9oOgQYyvP3sSv/B//gE+/sVnceHKGKvLAw0cxbrba9Al6ZE61wicthlP7RzlVkYu+XkfO2U6i1I40Iq0m4Sayu6rhLwoMJ/nSLMCBSvEUYSV0QB7dqxg9/oK9uxYwa71ZexcXcLa0hBLowSDWPtu9EA6fUG1qa0XaJZmmM4zjKcptqZzbExm2JrMMU0zzOY5pvMUszTHLMuRZ/p7TaIZt31QBEcKUosoc4to63NMIolhEmHX2jL271zGkb07cOvBnbjjyB7cfdNe3HVkL4Z7VgFmnHrlPP717z2Oj/7R0/jaC2eQ5QXWlofYu3PZAU53RN9u7EXXCJxmnSOTH8CFgdHOh1ugcYBEjo/INcvZRbwNO90fB5ilGcazOcDAzrVl3HnzAdx99CDecuthHLvlAG4+sBv7dq5ibXmI4SBuBmBY7nnumHDXjBLQXRUKZLl+pFmO2Vw7CcfTOcYzDbKtaYrNyQybk/K9yRyT0kmnH/r7FVgV62EwgghJrEEySiKsLiVYWxpgbXmIfTuWsW/HEnaujLBnfQl71kZIVoZ6viYAbEzw3Cvn8Uef/hr+4MkX8eR3TuPixgSDOMLKKNEl3aUU7uuZ7k3oqCeiCKD1t36It7cDb+AskHTeHoPoI9oVcCIpcfTQHjzy4DE8+rZjeNtdN+OGA7uBeFB+p+zPnOlm31ZEvG4RT3a6QhXPUkqP4C4rN5TRMs5suat9QCg7dNRJRHbcz2yGaT5Kp2W9T9MCdod2COPOzXNMN6d4+dwVfOv4OTz+3Gl85YXT+M6pi7i8NUMkBJaGMeJyqqHbvGFRRk9vvkY93zQxtP7WD3GbA3nMeIMbVeDwVSuQo/II/hBFJfaZgWES457bDuHd99+OO286gFgKvH55E6fOX8HZC1exMZ5iMkuRVnMxmOsuX0IQkliHIJYGMZZHCVaWhlgdDbC6NMD68hBry/quX1vS762MEoySGMNEIoklSJa9oYVjJVTpFqpJtldG2gdaZLgUhs28A9MLCc4VpmmGK1szvHZ5C6de38ALZy7h26+8judOXsAr567g0uYUhWIMYonhQKtjZrNcu6cV19fdQD03CM0aXH/rh7i3xLkOc5d8cbGyzGZteYRda0u4ujXF61e2MJ7O9aKVdV8VwW34hluaDKOjuxmFbohxJDVYBnFkAG2gVcrSEKtLA6wtD7C+rF+vlUAbJhJLgxiDJMIgkogjgSSWxrRC/UcPkCswS7WpPZln2JzMcXlrhgtXJ7iwMcHrVyc4c3ET5y6PcXFzivEsRZYrEBEGscQgljr2VgVwVf/pgtsCDi3QKi0DpMsP9LYPcVuKlFYYUT39r11845dSIaIdTCAryW6WK0RSII5k0yzTEsHkvw7BvCTYieNlz8VmzJJWBbogERZJrsIDFWilbCw1KYSeYSHsYn7FjKLQQ3P1vrW6rABNZX+gSJIuPJT6xqiyGCurrE8LClwLcLyOMPIH5haPTXGtMF9Ar/pL3uYv9XsU1rOmI8Am2nb9uxQCciDqsEChiqAp3gmgBdKycgkIECgim6c4DkfXL2SGMJR277b0tSzBYfmrDJ5XB3drWqagFnIUvs7PLV9v94e0XR7sOhKJAsHJRUjuOqodmW+lZrfMOyuMb3Moo2S5bV84AVaGR9X5WrktiHZSQBlbko+NSYQAoFBPYLkmT/UbCJpFC7gNx3M4FkbkN+Pdv2Q1urCItRs3Q8D8951POzpPnktF1lQfX+CUW6SPQ4rPEyPzWJd9px67zRl8eT89AyDXBRxaBBi+thBOJ4A6JhBaU1oooMLsUGdzQ1No0mpID9vuxlZxtDEeyg6uuuLXlixMAT9x8Bq2G2e1JGrXZLNgrs+iFNZ+oY/rM8HpDQGNI4EoaIrXEoR86WaGGU/kxXn4RKnzRP0e7nZEnR2XdmsvwTQEo6SFFjDGABB6GcntdKYeX6BrlDRd5vcbjBpHhbWyTlxi7IY2TF4TlDI9o/p9Lo7JV8gIBtrqiFsWnxl1Dqa9Mne0crmGC99KSe0Xt++dLEJ9Dv7GqahFZ9sEU70/wxbXXVFoy4xv8XDaBkn1bUPWqKGWGgsmkpEneaodsA3LH/ZKIfaegFP/u+DcfdL6+vgNWn62P4l/jhlvpmUYQVWPCHZVFnvNxQ67sLfzsjvdgB2ry6/GfAcNTTTb7gIEIOAh6dwJxGuMR30PeM22SbQZooDBdbokjmV18zZ17bbc59uJGHNbOlhUyJ+VuJjs0vbh5PosqGfqxELz+9q16/dSAlW96KwqB+4wBK0FJr5OwNhqalt8Y9GFDlpirj6hkFKqHYjk3VcISXaw+fqi32+8+f1G8J/aCgtpGjeRjIO6na7TWuiZFbfQicnbF+ueceXBEbS9JSe/ATcBru18/jQkUGgpOGh6dwBnO+qpr+qjvhYdXaMEo+s4Hx95peu4sf70CPF1cCBfM9ftOKh66m/axoW8zjSDa3e2bUOt0EKv14J9dojUP9vYIb8V1jqfHheIcL0r2ON6dkSNt3XIBQvG6M9H6HrPabvH/rOswuzSdQ7ymx60py3Wuf+FXijFtqGmqINPbPvYvuNei9qlsOr7/gEPeThQR8Dtui4yuu/2vmrlmtUULf4d18xvrt0q/H6WOF4OFBQb27Fk+l4Q6skHtntxKaDmrhmIdI33Zc/o9/cneMijwsinqnqSH+4ngr9XaQa0jQ+o512wzcrMN5zofx+Bp23Gv9G8prflsw1e02n6X2u45I0gxH92wgt/miQ6rLxpG/L3exHHeSO93l5r6lr9UEZ+EeO/VeDQNjiQK27MzpPXA5priON8L7zedD3S06N2ibZ/Xv+NgKetwvxqqpsP9U0z2Ja06WEVblvtXo/07J+4/4MEHkOFkdVSrkNWf+94AG3TObNt4Fyv2kNHg/MfTPAA1dDdfheb+vmC4FRl9jDn+8bDqM++nVLk6wYu9cLzDyJ4enCg1i4d9snXZvmQQ4yvy+vti0vRdV6ebXq9f0DB4/iBepurdt7mNTn8eprffaw5WvCF76XX+wccPN1+oM6QBLltVN84joE/iW23XwP+Q+Bs3w/Ux/wOW2jbiYL39du8oe4E+iFw3oArEHWa4f2sjibc3ScedE3AuR5e8/2T3ff9BBxHhXWUh/QnxU6vXbp24Pxpe71/CJxr4UC0/ag6B9UarNt+29LmjVBTPwTMn4RpEG27rUdr2878mK7W8QZwr8f8vk6v9w8Bc13//n+qy6/AwQFG8AAAAABJRU5ErkJggg==" width="52" height="52" alt="">
+      <div>
+        <div class="brand-name">Kallos One</div>
+        <div class="brand-sub">Studio manager for photographers</div>
+      </div>
+    </div>
+    <h1>Privacy, Terms &amp; Support</h1>
+    <p class="lede">Kallos One keeps your bookings, model and client details and signed contracts on your own device. Here is exactly how it handles information, the terms for using it, and how to get help.</p>
+    <nav aria-label="Sections">
+      <a href="#privacy">Privacy Policy</a>
+      <a href="#terms">Terms of Use</a>
+      <a href="#support">Support</a>
+    </nav>
+  </header>
+
+  <div class="label" role="note">
+    <span class="tick" aria-hidden="true">
+      <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M4.5 10.5l3.5 3.5 7.5-8" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </span>
+    <span class="eyebrow">App Privacy</span>
+    <strong>Data Not Collected</strong>
+  </div>
+
+  <section id="privacy" aria-labelledby="privacy-h">
+    <h2 id="privacy-h">Privacy Policy</h2>
+    <p class="meta">Effective 30 October 2026</p>
+    <div class="doc">
+      <div>
+        <h3>Who we are</h3>
+        <p>Kallos One is developed by Ahmad Junaid ("we", "us"). This policy explains how the Kallos One app for iPhone, iPad and Mac handles information.</p>
+      </div>
+      <div>
+        <h3>What the app stores</h3>
+        <p>To run your studio, Kallos One stores the information you enter: bookings and their history (including the client, models, fees and rights agreed, reschedules, cancellations, the cancellation reason you choose, such as a no-show, and any note you add, and the client's wishes for the booking), weddings and events (the kind of event, the couple's or host's names, the client and main contact, each day's venue and theme or dress code, the number of guests, each day's timeline of moments (times, places, who's needed), family members and key contacts with their phone numbers, your team, sensitivities you note (such as women-only areas or guests not to photograph), must-have shots and group photo lists, reference photos the client shares, and delivery dates, the client's wishes and your notes, the event's fees, deposit, deliverables and the Event Agreement it's signed with), model details (name, nickname, email, phone, address, date of birth, headshot and private notes), client details (name, company, email, phone, address, tax ID and private notes), makeup artist and stylist details (name, business name, role, email, phone, address, tax ID and private notes, plus whether they were on each shoot and what you agreed to pay them), parent or guardian details for minors, signatures (drawn on your device or taken from a photo), signed model releases and client agreements (including the name and title of the person who signed for the client), invoices to clients and statements to models (including TFP) and when each was paid, quotes, business expenses with the receipt photos you add, your rate card, your PayID, bank details and payment links, mood board and portfolio photos you add, a model's Instagram, portfolio link and agency, an activity log of what happened to your documents and data (names, numbers and the device name only), whether and when each document was emailed, contract templates and your governing law choices, business profiles, your master signature and app settings.</p>
+        <p>This information is stored on your device. When iCloud sync is on (it's on by default where available, and you can switch it off in Settings › Cloud & Multi-Device Sync), it is also stored in your private iCloud account, which Apple operates under Apple's Privacy Policy, so it appears on your other devices signed in to the same Apple Account. We cannot access your device or your iCloud data.</p>
+      </div>
+      <div>
+        <h3>What we collect</h3>
+        <p><b>Nothing.</b> Kallos One has no accounts, no servers, no analytics, no advertising, no tracking and no third-party SDKs. We do not collect, receive, sell or share any personal or financial information, including invoice amounts.</p>
+      </div>
+      <div>
+        <h3>Permissions and why they're used</h3>
+        <ul>
+          <li><b>Calendar:</b> to add your booked shoots to your iCloud or on-device calendars (On My iPhone, iPad or Mac) and check for clashes with events in those calendars. Calendars from other accounts, such as Google or Exchange, are not read.</li>
+          <li><b>Notifications:</b> to remind you an hour before a shoot if a release isn't signed yet, to wrap up after a shoot, and when an invoice is overdue. Reminders are scheduled on your device and you can turn them off in Settings › Notifications.</li>
+          <li><b>Reminders:</b> to create shoot reminders, a wedding or event's countdown reminders and, only if you choose one, a Prepare reminder with the client's wishes, and to let you tick them off from the widget.</li>
+          <li><b>Contacts:</b> when you import a model, client, makeup artist or stylist, save one to Contacts, or choose to update a contact or refresh from it. When you open Kallos One it also reads the contacts you've linked to show you what changed in Contacts. If a link has stopped working, it looks for that person in Contacts by their name, phone number or email to link them again. Nothing is changed until you choose Use New Details or Update All, and nothing is sent anywhere. When updating, only the name (first, middle and last), company, and the specific phone number, email and address you picked are changed; other details on the contact are kept. Private studio, client and crew notes, dates of birth, headshots and guardian details are never written to Contacts.</li>
+          <li><b>Face ID or Touch ID:</b> to lock the app, if you turn this on, and to leave Signing mode. Biometric data is handled by your device's operating system and never seen by the app.</li>
+          <li><b>Spotlight and Siri:</b> names of bookings, models, crew, clients, contracts and invoices, and shoot dates, are added to Spotlight search on this device so you can find them from the Home Screen (or with ⌘Space on a Mac). Email addresses, phone numbers and notes are never added, and nothing is sent to Apple or anyone else. You can turn this off in Settings › Privacy &amp; Data › Show in Spotlight. If you ask Siri about your next shoot, the answer is read from this device, and Siri asks you to unlock first. What you say to Siri is handled by Apple under Apple's Privacy Policy.</li>
+          <li><b>Archive:</b> when you archive old shoots, Kallos One saves them, with their signed contracts, invoices and PDFs, to the folder you choose, then removes them from the app. You can protect the archive file with a password; it's then encrypted, and the password is kept in your iCloud Keychain (end-to-end encrypted by Apple) so your other devices can add to the same archive. Separate PDF copies aren't password-protected. The archive stays wherever you put it; Kallos One never sends it anywhere, so keep it somewhere only you can open.</li>
+          <li><b>Camera:</b> only when you choose Take Photo for a model's headshot or a receipt. The photo stays in Kallos One and isn't saved to your photo library.</li>
+          <li><b>Photos:</b> only the specific photo you pick for a logo, headshot, signature, receipt or reference photo. The app does not get access to your photo library.</li>
+          <li><b>Files and folders:</b> only the location you choose when you save or open a backup, choose your archive folder, or save a contract or invoice. The app can't see any other files.</li>
+        </ul>
+        <p>You can change any permission in Settings on iPhone or iPad, or System Settings on a Mac. The app keeps working without them; only the related feature is unavailable.</p>
+      </div>
+      <div>
+        <h3>When information leaves your device</h3>
+        <p>Only when you choose to share it: for example, emailing a signed release or client agreement, an invoice, or a reschedule or cancellation message to a model, saving a document to Files, creating a backup file and choosing where to save it, exporting a money summary spreadsheet (CSV) for your accountant, or keeping iCloud sync on. Emails are sent from your own Mail account. Backups are never uploaded by Kallos One; a full backup contains model, client and crew details and signed contracts, so keep it private and protect it with a password.</p>
+        <p>Address search uses Apple Maps; the text you type is sent to Apple to suggest addresses, under Apple's Privacy Policy. When a shoot is added to your calendar, its place is also looked up in Apple Maps so Calendar can show travel time.</p>
+        <p>Weather forecasts come from Apple WeatherKit, using each booking&rsquo;s own map pin (the location you added to the shoot). Kallos One never asks for your current device location, and only the shoot&rsquo;s coordinates and date go to Apple&rsquo;s weather service for each lookup. Lookups happen when you open the app, when you save a shoot and, on iPhone and iPad, a few times a day in the background (you can turn this off with Background App Refresh in the Settings app). See Apple&rsquo;s WeatherKit terms for how Apple handles that request.</p>
+        <p>Square: if you use Charge in Square, Kallos One opens the Square Point of Sale app on your device with the invoice's amount, currency and number. Square handles the payment under its own terms and privacy policy; Kallos One only receives whether the payment went through, and marks the invoice paid.</p>
+        <p>Apple Intelligence: on devices that have it, From a Message and Draft a Message use Apple's own model on your device. The message you paste and the booking's details are read on your device only and are never sent to us, to Apple or to anyone else.</p>
+        <p>Sample data: if you turn on sample data, a separate sample studio is kept on this device only. It never syncs to iCloud and never goes to Calendar, Reminders, notifications or Spotlight.</p>
+      </div>
+      <div>
+        <h3>Information about models and minors</h3>
+        <p>When you record a model's details, you decide what is collected and are responsible for having a lawful basis and the model's consent, and for parent or guardian consent when the model is a minor. Kallos One gives you tools to record that consent, but doesn't verify it. Kallos One never allows a model under 18 in an adults-only shoot (see Children below).</p>
+        <p>Cancellation reasons and notes are personal information about the model. Record only what you need for your business, and keep notes factual.</p>
+        <p>Models you've worked with: a short text record of each model you book (name, email, phone, city and country, date of birth, their comfort level and whether they're OK with private images, and the list of their shoots) is kept on your devices even after you delete the model or archive their shoots, so you have a lifetime history. You can delete any record from Models › Models You've Worked With.</p>
+        <p>A model's comfort level (from Clothed only up to full art nude) and whether they're OK with private images are recorded only if you choose to, only for models 18 or older, and only for your own records. They never allow or skip any age check. Ask the model and keep them up to date.</p>
+        <p>A &ldquo;Needs Info&rdquo; badge may appear on a model&rsquo;s card when a mandatory field (date of birth, address or at least one contact detail) is still blank, so you remember to ask them next time you meet. The badge is only shown to you on this device and your other signed-in devices; nothing is sent anywhere, and optional fields never trigger it.</p>
+      </div>
+      <div>
+        <h3>Keeping and deleting information</h3>
+        <p>You decide how long information is kept. You can cancel a booking and keep its record, delete a booking together with its signed contracts and invoices, delete a model (keeping or removing their contact in Contacts), or erase everything from Settings › Privacy &amp; Data › Delete All Data. After deleting an item you have a few seconds to tap Undo; after that it's gone. Delete All Data always asks first. With iCloud sync on, anything you delete on one device is also deleted on your other devices. Deleting the app removes the data stored on the device; data in iCloud can be managed in Settings › your name › iCloud (System Settings › your name › iCloud on a Mac).</p>
+        <p>Signed releases may be your proof of consent, and signed client agreements your record of what was agreed. Consider exporting them, or making a full backup in Settings › Backup & Restore, before deleting.</p>
+      </div>
+      <div>
+        <h3>Security</h3>
+        <p>Your data is protected by Apple's built-in data protection and your device passcode or Mac login password. You can also lock Kallos One with Face ID or Touch ID, and the app hides its contents in the app switcher on iPhone and iPad. Each signed release and client agreement has a SHA-256 fingerprint so you can check it hasn't been altered. Widgets and Live Activities, if you add them, show upcoming shoot details (title, time, location and model name) and, on an event day, the names of the day's timeline moments (private moments are hidden) on your Home Screen and Lock Screen, where they can be seen without unlocking your device. Spotlight results (names and shoot dates) can be seen by anyone using your unlocked device, even when Kallos One is locked with Face ID; turn off Show in Spotlight to prevent this. Signing mode keeps a signer to the contract on screen until you confirm with Face ID, Touch ID or your passcode.</p>
+      </div>
+      <div>
+        <h3>Children</h3>
+        <p>Kallos One is a tool for professional photographers and is not directed at children.</p>
+        <p>Models under 18 may only be photographed for appropriate shoots, such as portfolio, fashion, family and portrait work, with a parent or guardian's written consent and with the parent or guardian present.</p>
+        <p>Kallos One never allows, and we will never support, any shoot of a person under 18 involving nudity or implied nudity, lingerie, underwear, swimwear, boudoir, glamour or any sexualised content. These shoots are for adults only, with no exceptions, even with a parent or guardian's consent. Adults-only shoot types are marked 18+ and are not even offered when booking anyone under 18. The app also stops a booking, an edit and any signature when anyone under 18, or anyone whose age isn't confirmed, is part of such a shoot, and every adults-only shoot requires confirming that everyone photographed is 18 or older.</p>
+      </div>
+      <div>
+        <h3>Your rights</h3>
+        <p>Because we don't hold any of your information, you can access, correct, export and delete it directly in the app at any time. This applies wherever you live, including under the GDPR and the Australian Privacy Act.</p>
+      </div>
+      <div>
+        <h3>Changes and contact</h3>
+        <p>If this policy changes, the updated version will appear here and in the app with a new effective date. Questions? Email <span class="email-inline">contact@ahmadjunaid.com</span>.</p>
+      </div>
+    </div>
+  </section>
+
+  <hr>
+
+  <section id="terms" aria-labelledby="terms-h">
+    <h2 id="terms-h">Terms of Use</h2>
+    <p class="meta">Effective 30 October 2026</p>
+    <div class="doc">
+      <div>
+        <h3>Licence</h3>
+        <p>Kallos One is licensed to you under <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/">Apple's Standard Licensed Application End User License Agreement</a>, together with the points below.</p>
+      </div>
+      <div>
+        <h3>Protecting children</h3>
+        <p>You must not use Kallos One to arrange, record or document any shoot that sexualises or exploits a person under 18, including nudity or implied nudity, lingerie, underwear, swimwear, boudoir or glamour shoots, whatever the stated purpose and even with a parent or guardian's consent. Doing so breaks these terms and the law, and your licence to use Kallos One ends.</p>
+        <p>If you suspect a child is being exploited, call the police on 000 in an emergency, or report it to the Australian Centre to Counter Child Exploitation at <a href="https://www.accce.gov.au/report">accce.gov.au/report</a>. Outside Australia, contact your local police.</p>
+      </div>
+      <div>
+        <h3>Not legal advice</h3>
+        <p>Sample templates and governing law choices are for convenience only. Photography laws vary by state and country. Have a local lawyer review your agreements.</p>
+        <p>The sample model release and client agreement, the electronic-signature consent and the parent or guardian wording are starting points only. Laws on model releases, client contracts, consumer rights, electronic signatures and minors differ between countries and states, and some protections cannot be waived. You are responsible for the agreements you use and for complying with the law where you work.</p>
+        <p>The governing law choices (Australian states and territories, and other countries) only fill in the place named in your contract. Choosing one doesn't make a template comply with that place's law, so check your agreement with a local lawyer, especially before working in another state or overseas. The same applies to the extra terms Kallos One can add for particular kinds of shoot (such as commercial use, stock, swimwear, nudity, safety, workshops and private images): they are short starting points added to your own template, not legal advice.</p>
+        <p>The Money Summary, its GST and BAS figures and the accountant spreadsheet are added up from the invoices and statements you entered, by issue date. They are a convenience, not tax or accounting advice. Check them with your accountant or registered tax agent before you lodge a BAS or tax return.</p>
+      </div>
+      <div>
+        <h3>Electronic signatures</h3>
+        <p>Kallos One records when, how and on which device each signature was given, and prints this on the release or client agreement with a fingerprint of the document. Whether an electronic signature is valid for a particular agreement depends on local law.</p>
+        <p>A signature taken from a photo shows only that an image was supplied, not that the person signed that document at that moment. Use photo signatures for your own master signature, and have models and guardians sign live on your device.</p>
+        <p>Make sure the right person is signing.</p>
+      </div>
+      <div>
+        <h3>Your content</h3>
+        <p>You own everything you create in Kallos One. Keep your own copies of important documents, such as signed releases and client agreements, for example with Settings › Backup &amp; Restore; deleted data can't be recovered. If you protect a backup with a password and lose it, the backup can't be opened.</p>
+      </div>
+      <div>
+        <h3>No warranty</h3>
+        <p>To the extent permitted by law, Kallos One is provided "as is". Nothing in these terms limits rights you have under consumer law, including the Australian Consumer Law.</p>
+      </div>
+      <div>
+        <h3>Contact</h3>
+        <p>Email <span class="email-inline">contact@ahmadjunaid.com</span>.</p>
+      </div>
+    </div>
+  </section>
+
+  <hr>
+  <section id="support" aria-labelledby="support-h">
+    <h2 id="support-h">Support</h2>
+    <div class="contact">
+      <h3>Email the developer</h3>
+      <div class="email-row">
+        <a class="email" id="support-email" href="mailto:contact@ahmadjunaid.com?subject=Kallos%20One%20Support">contact@ahmadjunaid.com</a>
+        <button class="copy" id="copy-email" type="button">Copy address</button>
+      </div>
+      <p class="small" id="copy-status" aria-live="polite">Include your device (iPhone, iPad or Mac) and its software version. Please don't send model or client details or signed contracts by email unless asked.</p>
+    </div>
+
+    <div>
+      <details>
+        <summary>How do I delete a booking and its signed contracts?</summary>
+        <p>In Bookings, swipe the booking to the left and tap Delete (on a Mac, right-click it), or open the booking and choose Delete Booking from the ⋯ menu. This removes the booking, its signed release and client agreement, its invoices and the calendar event and reminder Kallos One created.</p>
+      </details>
+      <details>
+        <summary>How do I back up Kallos One, or move it to a new device?</summary>
+        <p>Go to Settings › Backup &amp; Restore. Choose Settings Only (your studio setup) or Everything (also models, clients, bookings, releases and invoices), add a password if you like, and choose where to save it: Files or iCloud Drive on iPhone and iPad, or any folder or iCloud Drive on a Mac. After reinstalling, or on another iPhone, iPad or Mac, choose Restore from a Backup and pick the file.</p>
+      </details>
+      <details>
+        <summary>How do I erase all my data?</summary>
+        <p>Go to Settings › Privacy &amp; Data › Delete All Data. You can export your signed contracts first. Type DELETE to confirm. This can't be undone, and with iCloud sync on it also erases your other devices.</p>
+      </details>
+      <details>
+        <summary>Can I get a model release signed before the shoot?</summary>
+        <p>Yes. Open the booking and tap Sign Model Release. Completing the shoot is a separate step, and a release signed later is still attached to the booking.</p>
+      </details>
+      <details>
+        <summary>How do I get a client agreement signed?</summary>
+        <p>Open a booking that has a client and tap Sign Client Agreement. The agreement fills in the fee, rights, shoot details and governing law from the booking, the person signing for the client signs, and your master signature is added. The sealed PDF is kept on the booking and in the Contracts tab. Edit the wording in Settings › Contract Templates.</p>
+      </details>
+      <details>
+        <summary>How do I check a signed contract hasn't been changed?</summary>
+        <p>Open the release or client agreement (in the Contracts tab or on its booking) and tap Verify. Kallos One re-checks the PDF against the SHA-256 fingerprint recorded when it was signed.</p>
+      </details>
+      <details>
+        <summary>Are the contract templates legal advice?</summary>
+        <p>No. Sample templates and governing law choices are for convenience only. Photography laws vary by state and country. Have a local lawyer review your agreements.</p>
+      </details>
+      <details>
+        <summary>Can I use releases and client agreements outside NSW or overseas?</summary>
+        <p>Yes. Go to Settings › Contract Templates › Governing Law to choose any Australian state or territory; Pakistan, Japan, Malaysia or another country; or Any country, which applies the law of the country where the session took place. You can also add your own. You can set it for each template, or for one booking on its details card. Model releases and client agreements use the same list. Laws differ between places, so have a local lawyer check your contracts before you rely on them.</p>
+      </details>
+      <details>
+        <summary>Which calendars does Kallos One use?</summary>
+        <p>Only your iCloud and on-device calendars (On My iPhone, iPad or Mac). Google, Exchange and other accounts stay in the Calendar app and aren't read by Kallos One.</p>
+      </details>
+      <details>
+        <summary>Does Kallos One work without Calendar or Contacts access?</summary>
+        <p>Yes. Without Calendar access, bookings stay in Kallos One only. Without Contacts access, you can still add models by hand. You can change access any time in Settings on iPhone or iPad, or System Settings on a Mac.</p>
+      </details>
+    </div>
+  </section>
+
+  <footer>Kallos One needs iOS 18 or iPadOS 18, or macOS 15 Sequoia on a Mac, or later.<br>Built by a working photographer in Sydney. Ready for Australian law out of the box, and usable anywhere you shoot.<br>© 2026 Ahmad Junaid · Kallos One</footer>
+</div>
+
+<script>
+(function () {
+  var btn = document.getElementById('copy-email');
+  var status = document.getElementById('copy-status');
+  var email = 'contact@ahmadjunaid.com';
+  var original = status.textContent;
+  function selectEmail() {
+    var el = document.getElementById('support-email');
+    var range = document.createRange();
+    range.selectNodeContents(el);
+    var sel = window.getSelection();
+    sel.removeAllRanges();
+    sel.addRange(range);
+  }
+  btn.addEventListener('click', function () {
+    var done = function () {
+      btn.textContent = 'Copied';
+      status.textContent = 'Email address copied.';
+      setTimeout(function () { btn.textContent = 'Copy address'; status.textContent = original; }, 2500);
+    };
+    try {
+      navigator.clipboard.writeText(email).then(done, function () { selectEmail(); status.textContent = 'Address selected. Press Copy to copy it.'; });
+    } catch (e) {
+      selectEmail();
+      status.textContent = 'Address selected. Press Copy to copy it.';
+    }
+  });
+})();
+</script>
+
+</body>
+</html>
