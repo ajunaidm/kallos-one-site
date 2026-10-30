@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="referrer" content="no-referrer">
+<title>Add to Kallos One</title>
+<style>
+  :root { --bg:#f6f3ee; --card:#ffffff; --ink:#1d1b18; --muted:#6b655d; --accent:#8a5a2b; }
+  @media (prefers-color-scheme: dark) { :root { --bg:#141210; --card:#1f1c19; --ink:#f2ede6; --muted:#a39b90; --accent:#d9a26b; } }
+  * { box-sizing: border-box; }
+  body { margin:0; min-height:100vh; display:flex; align-items:center; justify-content:center; padding:24px 16px;
+         background:var(--bg); color:var(--ink); font:16px/1.5 -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif; }
+  main { width:100%; max-width:440px; background:var(--card); border-radius:20px; padding:28px 24px; box-shadow:0 10px 30px rgba(0,0,0,.08); }
+  h1 { font-size:22px; margin:0 0 6px; }
+  p { margin:0 0 14px; color:var(--muted); }
+  .who { font-size:18px; color:var(--ink); font-weight:600; margin:16px 0; }
+  a.button { display:block; text-align:center; text-decoration:none; background:var(--accent); color:#fff; font-weight:600;
+             padding:14px 18px; border-radius:14px; margin:18px 0 12px; }
+  .small { font-size:13px; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Add to Kallos One</h1>
+  <p id="intro">Opening Kallos One with this model's details, ready for you to check and save.</p>
+  <div class="who" id="who"></div>
+  <a class="button" id="open" href="#">Open in Kallos One</a>
+  <p class="small">Nothing is saved until you tap <strong>Save Model</strong> in Kallos One. This page doesn't send or keep any details: they stay in your email and on your device.</p>
+  <p class="small">Kallos One needs to be installed on this iPhone, iPad or Mac.</p>
+</main>
+<script>
+  // The details travel after the # sign, which browsers never send to a web server.
+  (function () {
+    var query = (location.hash || "").replace(/^#/, "");
+    var open = document.getElementById("open");
+    var who = document.getElementById("who");
+    if (!query) {
+      document.getElementById("intro").textContent = "This link doesn't carry any details. Open it from the email Kallos One's website form sent you.";
+      open.style.display = "none";
+      return;
+    }
+    try {
+      var params = new URLSearchParams(query);
+      var name = [params.get("given"), params.get("family")].filter(Boolean).join(" ");
+      if (name) { who.textContent = name; }
+    } catch (e) { /* show the button anyway */ }
+    var target = "kallosone://add-model?" + query;
+    open.href = target;
+    // Try straight away; the button stays for apps that block automatic opening.
+    setTimeout(function () { window.location.href = target; }, 300);
+  })();
+</script>
+</body>
+</html>
